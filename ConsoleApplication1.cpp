@@ -5,25 +5,18 @@ int main()
 {
 
 	setlocale(LC_ALL, "Rus");
-	int x, c;
-	long double s,s1;
-	c = 0;
+	int x, c, R, i;
+	long double s;
 	s = 0;
-	s1 = 0;
 	std::cout << "Введите количество необходимых для вывода цифр после запятой(не больше 8):";
-	std::cin >> x;
-	for(int i=1;i<1000000000;i+=2)
+	std::cin >> x, R;
+	for (i = 1; i < 1000000000; i++)
 	{
-		if (c % 2 == 0)
+		if (pow(rand(R), 2) + pow(rand(R), 2) <= R)
 		{
-			s += 4 * (long double(1.0) / i);
+			s += 1;
 		}
-		else
-		{
-			s -= 4 * (long double(1.0) / i);
-		}
-		c += 1;
 	}
-	std::cout<< std::setprecision(x+1) << s;
+	std::cout << std::setprecision(x + 1) << (s / i) * 4;
 	return 0;
 }
