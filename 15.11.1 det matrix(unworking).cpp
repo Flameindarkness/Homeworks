@@ -1,5 +1,4 @@
-﻿#include <iostream>
-using namespace std;
+#include <iostream>
 void GetMatr(double** mas, double** p, double i, double j, double m) {
     int ki, kj, di, dj;
     di = 0;
@@ -21,7 +20,7 @@ double Det(double** mas, double m) {
     j = 0; d = 0;
     k = 1;
     n = m - 1;
-    if (m < 1) cout << "Определитель вычислить невозможно!";
+    if (m < 1) std::cout << "Определитель вычислить невозможно!";
     if (m == 1) {
         d = mas[0][0];
         return(d);
@@ -45,17 +44,17 @@ int main() {
     double** mas;
     system("chcp 1251");
     system("cls");
-    cout << "Введите размерность квадратной матрицы: ";
-    cin >> m;
+    std::cout << "Введите размерность квадратной матрицы: ";
+    std::cin >> m;
     mas = new double* [m];
     for (i = 0; i < m; i++) {
         mas[i] = new double[m];
         for (j = 0; j < m; j++) {
-            cin >> mas[i][j];
+            std::cin >> mas[i][j];
         }
     }
     d = Det(mas, m);
-    cout << "Определитель матрицы равен " << d;
-    cin.get(); cin.get();
+    std::cout << "Определитель матрицы равен " << d;
+    std::cin.get(); std::cin.get();
     return 0;
 }
