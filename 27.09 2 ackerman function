@@ -1,0 +1,12 @@
+#include <iostream>
+int ackerman(int a, int b) {
+    if (a == 0) return (b + 1);
+    if (a > 0 && b == 0) return ackerman(a - 1, 1);
+    if (a > 0 && b > 0) return ackerman(a - 1, ackerman(a, b - 1));
+}
+int main()
+{
+    int x, y;
+    std::cin >> x >> y;
+    std::cout << ackerman(x, y);
+}
