@@ -10,13 +10,13 @@ int main()
 	int cb = 0, ce = col-1, rb = 0, re = row - 1, n = 0, m = 0;
 	A[0][0] = k;
 	for (; rb <= re;) {
-		for (; n < ce;) A[m][++n] = ++k;
+		for (; n < ce;){if(k<=row*col) A[m][++n] = ++k;}
 		++rb;
-		for (; m < re;) A[++m][n] = ++k;
+		for (; m < re;){if(k<=row*col) A[++m][n] = ++k;}
 		--ce;
-		for (; n > cb;) A[m][--n] = ++k;
+		for (; n > cb;){if(k<=row*col) A[m][--n] = ++k;}
 		--re;
-		for (; m > rb;) A[--m][n] = ++k;
+		for (; m > rb;){if(k<=row*col) A[--m][n] = ++k;}
 		++cb;
 	}
 	A[m][n] = k;
