@@ -38,6 +38,8 @@ double Det(double** mas, double m) {
     }
     for (int i = 0; i < m; ++i) delete[] p[i];
     delete[] p;
+    for (int i = 0; i < m; ++i) delete[] mas[i];
+    delete[] mas;
     return(d);
 }
 int main() {
@@ -62,3 +64,4 @@ int main() {
     delete[] mas;
     return 0;
 }
+// Не могу найти утечку
