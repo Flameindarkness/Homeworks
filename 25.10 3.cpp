@@ -12,7 +12,7 @@ int main()
 	for (i = 1;; ++i)
 	{
 		r -= i;
-		if (r < 0)
+		if (r <= 0)
 			break;
 		++e;
 		++co;
