@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
+#include <string>
 std::string fill(int count, char sign)
 {
     std::string str = "";
@@ -20,7 +21,7 @@ std::string to_hex(int x)
     return str;
 }
 
-int file2hex(const char* inp = "ex.txt", const char* outp = "x.txt") {
+int file2hex(const char* inp , const char* outp ) {
     setlocale(LC_ALL, "rus");
     int res = 0;
     std::ifstream in("ex.txt", std::ios_base::binary);
@@ -93,5 +94,11 @@ int file2hex(const char* inp = "ex.txt", const char* outp = "x.txt") {
 }
 
 int main(int argc, const char* argv[]) {
-    return file2hex();
+    setlocale(LC_ALL, "rus");
+    char inp[256], outp[256];
+    std::cout << "Введите имя исходного файла: ";
+    std::cin.getline(inp, 256);
+    std::cout << "Введите имя выходного файла: ";
+    std::cin.getline(outp, 256);
+    return file2hex(inp,outp);
 }
