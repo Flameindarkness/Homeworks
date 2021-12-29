@@ -24,7 +24,7 @@ std::string to_hex(int x)
 int file2hex(const char* inp , const char* outp ) {
     setlocale(LC_ALL, "rus");
     int res = 0;
-    std::ifstream in("ex.txt", std::ios_base::binary);
+    std::ifstream in(inp, std::ios_base::binary);
     if (!in.is_open())
     {
         std::cout << "Input file open error \n";
