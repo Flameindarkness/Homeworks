@@ -36,6 +36,8 @@ double Det(double** mas, double m) {
             k = -k;
         }
     }
+    for (int i = 0; i < m; ++i) delete[] p[i];
+    delete[] p;
     return(d);
 }
 int main() {
@@ -56,5 +58,7 @@ int main() {
     d = Det(mas, m);
     std::cout << "Определитель матрицы равен " << d;
     std::cin.get(); std::cin.get();
+    for (int i = 0; i < m; ++i) delete[] mas[i];
+    delete[] mas;
     return 0;
 }
