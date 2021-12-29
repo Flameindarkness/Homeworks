@@ -1,28 +1,26 @@
-﻿#include<iostream>
+#include<iostream>
 #include <iomanip>
 #include <cmath>
 int main()
 {
 
 	setlocale(LC_ALL, "Rus");
-	int k,r=0,e=0,i=0;
+	int k, r = 0, e = 0, i = 0, c = 0,co=0;
+	std::cout << "Введите номер комнаты:";
 	std::cin >> k;
 	r = k;
-	for (i = 1; i <= k; i++)
-	{
-		if (r <= pow(i, i))
-		{
-			break;
-		}
-		r -= (i*i);
-		e += i;
-	}
-	std::cout << e<<" "<<r<<std::endl;
-	while (r > i)
+	for (i = 1;; ++i)
 	{
 		r -= i;
-		e += 1;
+		if (r < 0)
+			break;
+		++e;
+		++co;
+		if (co != i)
+			--i;
+		else
+			co = 0;
 	}
-	std::cout << e+1 << " " << r;
+	std::cout << e+1 << " " << r + i;
 	return 0;
 }
